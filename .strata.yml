@@ -14,3 +14,7 @@ stages:
         commands:
           - yarn install
           - yarn build
+  publish:
+    - npm-publish:
+        multi-module-publish: true
+        safe-version: true
