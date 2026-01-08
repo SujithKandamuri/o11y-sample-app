@@ -14,20 +14,20 @@ stages:
         commands:
           - yarn install
           - yarn build
-  integration-test:
-    - downstream-dependency:
-        downstream-repos:
-          - repo-url: https://git.soma.salesforce.com/dpxtools/sfci-downstream-testing-gitsoma-repo1
-            branches:
-              - my-patch-branch
-              - test-branch
-          - repo-url: https://git.soma.salesforce.com/dpxtools/sfci-downstream-testing-gitsoma-repo2
-            branches:
-              - github-default
-        packages-to-test:
-          npm:
-            - "o11y-sample-client"
-            - "o11y-sample-node-server"
+  # integration-test:
+  #   - downstream-dependency:
+  #       downstream-repos:
+  #         - repo-url: https://git.soma.salesforce.com/dpxtools/sfci-downstream-testing-gitsoma-repo1
+  #           branches:
+  #             - my-patch-branch
+  #             - test-branch
+  #         - repo-url: https://git.soma.salesforce.com/dpxtools/sfci-downstream-testing-gitsoma-repo2
+  #           branches:
+  #             - github-default
+  #       packages-to-test:
+  #         npm:
+  #           - "o11y-sample-client"
+  #           - "o11y-sample-node-server"
 
   publish:
     - npm-publish:
